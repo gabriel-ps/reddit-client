@@ -1,22 +1,11 @@
 <template>
   <div id="app">
-    <AppContainer class="main-container">
-      <TheSidebar />
-      <main class="main">
-        <RouterView />
-      </main>
-    </AppContainer>
+    <RouterView />
   </div>
 </template>
 
 <script>
-import TheSidebar from '@/modules/core/components/layout/TheSidebar.vue'
-
-export default {
-  components: {
-    TheSidebar
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">
@@ -28,13 +17,5 @@ export default {
 
 #app {
   font-family: $system-default-font-family;
-
-  .main-container {
-    display: flex;
-
-    .main {
-      width: 100%;
-    }
-  }
 }
 </style>

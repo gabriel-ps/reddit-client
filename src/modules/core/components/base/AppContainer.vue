@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <b-container fluid>
     <slot />
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -9,9 +9,4 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.container {
-  width: 100%;
-  padding-right: 5rem;
-  padding-left: 5rem;
-}
 </style>
