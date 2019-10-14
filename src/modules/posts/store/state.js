@@ -1,1 +1,7 @@
-export default {}
+const posts = {
+  children: []
+}
+
+export default {
+  posts
+}

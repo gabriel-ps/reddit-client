@@ -10,11 +10,20 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import TheSidebar from '@/modules/posts/components/layout/TheSidebar.vue'
+
+const module = 'posts'
 
 export default {
   components: {
     TheSidebar
+  },
+  created () {
+    this.getPosts()
+  },
+  methods: {
+    ...mapActions(module, ['getPosts'])
   }
 }
 </script>
