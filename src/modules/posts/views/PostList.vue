@@ -3,7 +3,7 @@
     <b-row>
       <TheSidebar />
       <main class="main col-md-9 ml-sm-auto col-lg-10 px-4">
-        <RouterView />
+        <PostContent />
       </main>
     </b-row>
   </AppContainer>
@@ -12,12 +12,14 @@
 <script>
 import { mapActions } from 'vuex'
 import TheSidebar from '@/modules/posts/components/layout/TheSidebar.vue'
+import PostContent from '@/modules/posts/components/layout/PostContent.vue'
 
 const module = 'posts'
 
 export default {
   components: {
-    TheSidebar
+    TheSidebar,
+    PostContent
   },
   created () {
     this.getPosts()

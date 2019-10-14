@@ -3,7 +3,7 @@ import NotFound from './views/NotFound.vue'
 export default [
   {
     path: '/',
-    redirect: { name: 'posts-list' }
+    redirect: { name: 'posts.list' }
   },
   {
     path: '*',

@@ -9,6 +9,11 @@ const getPosts = async ({ commit }) => {
   }
 }
 
+const setCurrentPostIndex = ({ commit }, index) => {
+  commit('SET_CURRENT_POST_INDEX', index)
+}
+
 export default {
-  getPosts
+  getPosts,
+  setCurrentPostIndex
 }

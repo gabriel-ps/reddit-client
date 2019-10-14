@@ -5,8 +5,10 @@
     </b-nav-item>
     <b-nav-item
       class="sidebar__item"
-      v-for="post in posts"
+      v-for="(post, index) in posts"
       :key="post.uniqueId"
+      :active="index === currentPostIndex"
+      @click="setCurrentPostIndex(index)"
     >
       <p class="sidebar__item__author">{{ post.author }}</p>
       <p class="sidebar__item__created-time"> - {{ post.relativeCreatedTime }}</p>
@@ -22,13 +24,21 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 const module = 'posts'
 
 export default {
   computed: {
-    ...mapGetters(module, ['posts'])
+    ...mapGetters(module, ['posts']),
+    ...mapState(module, {
+      currentPostIndex (state) {
+        return state.currentPostIndex
+      }
+    })
+  },
+  methods: {
+    ...mapActions(module, ['setCurrentPostIndex'])
   }
 }
 </script>
@@ -48,6 +58,11 @@ export default {
 
   &__item {
     border-bottom: 1px solid;
+
+    & a.active {
+      background-color: $color-selected-post;
+    }
+
     &__h1 {
       font-size: 1.3rem;
     }
